@@ -12,6 +12,9 @@
 	justify-content: center;
 	align-items: center;
 }
+.initial-icon {
+	margin-bottom: 8px;
+}
 .initial-description {
 	font-family: 'Inter';
 	font-weight: 400;
