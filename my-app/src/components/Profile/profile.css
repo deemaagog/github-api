@@ -1,0 +1,77 @@
+.main {
+
+	margin: 39px auto;
+	max-width: 1366px;
+	min-width: 320px;
+	width: 100%;
+}
+.main-container {
+  padding: 0 54px;
+	display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user {
+  margin-right: 95px;
+}
+.avatar-container {
+  width: 280.97px;
+  height: 280px;
+  background-color: transparent;
+  margin-bottom: 30px;
+}
+.avatar {
+  width: 100%;
+  border-radius: 500px;
+  object-fit: contain;
+}
+.name {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 130%;
+  color: #000000;
+  margin-bottom: 12px;
+}
+.username {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #0064eb;
+}
+.follow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+.followers,
+.following {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #000000;
+}
+.following-icon {
+  margin-left: 19px;
+}
+.followers {
+	margin-left: 3px;
+}
+.following {
+	margin-left: 2px;
+}
+.repos-title {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 130%;
+  color: #000000;
+  margin-top: -12px;
+}
+li {
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
