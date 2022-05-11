@@ -32,7 +32,14 @@ export const Profile = ({ userName }) => {
   }, [userName, fetchUser]);
 
   if (error) {
-    return <h1>User not found</h1>;
+    return (
+			<div className="not-found-section">
+				<div className="not-found-container">
+					<img className="not-found-icon" src={iconUserNotFound} alt="userNotFound"/>
+					<h1 className="not-found-description">User not found</h1>
+				</div>
+			</div>
+		)
   }
 
   if (loading) {
