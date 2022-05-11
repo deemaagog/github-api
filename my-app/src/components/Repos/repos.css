@@ -1,0 +1,29 @@
+.repo-list {
+	list-style: none;
+	padding: 0;
+}
+.repo-item {
+	width: 877px;
+	height: 112px;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 24px;
+}
+.repo-link {
+	text-decoration: none;
+	font-family: 'Inter';
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 29px;
+	color: #0064EB;
+	padding: 32px 0 0 32px;
+	margin-bottom: 16px;
+}
+.repo-description {
+	font-family: 'Inter';
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
+	color: #000000;
+	padding: 0 200px 24px 32px;
+}

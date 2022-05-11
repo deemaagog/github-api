@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import { iconUserNotFound, iconFollowers, iconFollowing } from "../../assets";
 import "./profile.css";
+import { Repos } from '../Repos/Repos';
 
 export const Profile = ({ userName }) => {
   const [loading, setLoading] = useState(false);
@@ -15,9 +16,10 @@ export const Profile = ({ userName }) => {
         `https://api.github.com/users/${userName}`
       );
       setUserData(userResponse.data);
+			console.log(userResponse.data);
       setError(null);
     } catch (err) {
-      setError(error);
+      setError(err);
     } finally {
       setLoading(false);
     }
@@ -44,6 +46,7 @@ export const Profile = ({ userName }) => {
     followers,
     following,
     public_repos: reposTotal,
+		description,
     avatar_url: avatarUrl,
   } = userData;
 
@@ -59,23 +62,27 @@ export const Profile = ({ userName }) => {
             {login}
           </a>
           <div className="follow">
-            <img
-              className="followers-icon"
-              src={iconFollowers}
-              alt="iconFollowers"
-            />
-            <span className="followers">{followers} followers</span>
-            <img
-              className="following-icon"
-              src={iconFollowing}
-              alt="iconFollowing"
-            />
-            <span className="following">{following} following</span>
+						<div className="followers-container">
+							<img
+								className="followers-icon"
+								src={iconFollowers}
+								alt="iconFollowers"
+            	/>
+            	<span className="followers">{followers} followers</span>
+						</div>
+            <div className="following-container">
+							<img
+								className="following-icon"
+								src={iconFollowing}
+								alt="iconFollowing"
+							/>
+							<span className="following">{following} following</span>
+						</div>
           </div>
         </div>
         <div className="repos">
-          <h1 className="repos-title">
-           </h1>
+          <h1 className="repos-title">{reposTotal ? `Repositories(${reposTotal})` : "No repositories"}</h1>
+          <Repos userName={userName} />
         </div>
       </div>
     </main>
