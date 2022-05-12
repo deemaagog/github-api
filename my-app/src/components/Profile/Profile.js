@@ -3,6 +3,7 @@ import axios from "axios";
 import { iconUserNotFound, iconFollowers, iconFollowing, iconRepoNotFound } from "../../assets";
 import "./profile.css";
 import { Repos } from '../Repos/Repos';
+import { CircularProgress } from "@mui/material";
 
 export const Profile = ({ userName }) => {
   const [loading, setLoading] = useState(false);
@@ -16,12 +17,11 @@ export const Profile = ({ userName }) => {
         `https://api.github.com/users/${userName}`
       );
       setUserData(userResponse.data);
-			console.log(userResponse.data);
       setError(null);
     } catch (err) {
       setError(err);
     } finally {
-      setLoading(false);
+			window.setTimeout(() => { setLoading(false) }, 2000);
     }
   }, [userName]);
 
@@ -43,7 +43,15 @@ export const Profile = ({ userName }) => {
   }
 
   if (loading) {
-    return null;
+    return <CircularProgress
+			size={68}
+			sx={{
+				color: [500],
+				display: 'flex',
+				justifyContent: 'center',
+				margin: '250px auto'
+			}}
+		/>;
   }
 
   const {
@@ -59,7 +67,10 @@ export const Profile = ({ userName }) => {
 
   return (
     <main className="main">
-      <div className="main-container">
+			{loading ? (
+				<CircularProgress />
+			) : (
+				<div className="main-container">
         <div className="user">
           <div className="avatar-container">
             <img className="avatar" src={avatarUrl} alt="avatar"></img>
@@ -101,6 +112,8 @@ export const Profile = ({ userName }) => {
           <Repos userName={userName} />
         </div>
       </div>
+			)}
+
     </main>
   );
 };
