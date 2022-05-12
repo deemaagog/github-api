@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, { useCallback, useEffect, useState } from 'react';
 import './repos.css';
 
-
 export const Repos = ({ userName }) => {
 	const [error, setError] = useState(null);
 	const [repos, setRepos] = useState([]);
@@ -29,17 +28,16 @@ export const Repos = ({ userName }) => {
 	}
 
   return (
-			<ul className="repo-list">
-				{repos.slice(0, 4).map((repo) => (
-					<>
+		<ul className="repo-list">
+			{repos.slice(0, 4).map((repo) => (
+				<>
 					<li className='repo-item' key={repo.id}>
 						<a className='repo-link' href={repo.html_url}>{repo.name}</a>
 						<span className='repo-description'>{repo.description}</span>
 					</li>
-
-					</>
-				))}
-			</ul>
+				</>
+			))}
+		</ul>
   )
 }
 

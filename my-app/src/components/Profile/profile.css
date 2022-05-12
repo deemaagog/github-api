@@ -8,10 +8,8 @@
   padding: 0 54px;
 	display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 .user {
-  margin-top: -140px;
   margin-right: 98px;
 }
 .avatar-container {
@@ -45,7 +43,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 25px;
 }
 .followers,
 .following {
@@ -100,4 +98,27 @@ li {
 	line-height: 140%;
 	text-align: center;
 	color: #808080;
+}
+.repo-section {
+	max-width: 1366px;
+	min-width: 320px;
+	width: 100%;
+}
+.repo-container {
+  margin-top: 180px;
+  margin-right: 316px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.repo-not-found-icon {
+  margin-bottom: 35px;
+}
+.repo-not-found-description {
+  font-family: 'Inter';
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 140%;
+  text-align: center;
+  color: #808080;
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
-import { iconUserNotFound, iconFollowers, iconFollowing } from "../../assets";
+import { iconUserNotFound, iconFollowers, iconFollowing, iconRepoNotFound } from "../../assets";
 import "./profile.css";
 import { Repos } from '../Repos/Repos';
 
@@ -88,7 +88,16 @@ export const Profile = ({ userName }) => {
           </div>
         </div>
         <div className="repos">
-          <h1 className="repos-title">{reposTotal ? `Repositories(${reposTotal})` : "No repositories"}</h1>
+          <div className="repo-section">
+						{reposTotal ? (
+							<h1 className="repos-title">Repositories ({reposTotal})</h1>
+						) : (
+							<div className="repo-container">
+								<img className="repo-not-found-icon" src={iconRepoNotFound} alt="repoNotFound" />
+								<h1 className="repo-not-found-description">Repository list is empty</h1>
+							</div>
+						)}
+					</div>
           <Repos userName={userName} />
         </div>
       </div>
