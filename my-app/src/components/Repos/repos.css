@@ -3,10 +3,6 @@
 	padding: 0;
 }
 .repo-item {
-	max-width: 877px;
-	min-width: 320px;
-	width: 100%;
-	height: 112px;
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 24px;

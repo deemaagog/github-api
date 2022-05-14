@@ -17,11 +17,12 @@ export const Profile = ({ userName }) => {
         `https://api.github.com/users/${userName}`
       );
       setUserData(userResponse.data);
+			console.log(userResponse.data);
       setError(null);
     } catch (err) {
       setError(err);
     } finally {
-			window.setTimeout(() => { setLoading(false) }, 2000);
+			window.setTimeout(() => { setLoading(false) }, 1000);
     }
   }, [userName]);
 
@@ -61,8 +62,8 @@ export const Profile = ({ userName }) => {
     followers,
     following,
     public_repos: reposTotal,
-		description,
-    avatar_url: avatarUrl,
+		// description,
+    avatar_url: avatarUrl
   } = userData;
 
   return (
@@ -113,7 +114,7 @@ export const Profile = ({ userName }) => {
         </div>
       </div>
 			)}
-
+      {/* <PaginationRepo numOfPages={numOfPages} /> */}
     </main>
   );
 };

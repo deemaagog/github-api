@@ -7,7 +7,6 @@
 .main-container {
   padding: 0 54px;
 	display: flex;
-  justify-content: space-between;
 }
 .user {
   margin-right: 98px;
@@ -62,6 +61,11 @@
 /* .following {
 	margin-left: 2px;
 } */
+.repos {
+  max-width: 877px;
+  min-width: 320px;
+  width: 100%;
+}
 .repos-title {
   font-family: "Inter";
   font-weight: 600;
@@ -121,4 +125,46 @@ li {
   line-height: 140%;
   text-align: center;
   color: #808080;
+}
+
+@media (max-width: 1200px) {
+  .main {
+    max-width: 1200px;
+  }
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .user {
+    margin-right: 0;
+    margin-bottom: 100px;
+  }
+  .name {
+    text-align: center;
+  }
+  .username {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .repos-title {
+    text-align: center;
+  }
+}
+@media (max-width: 910px) {
+  .main {
+    max-width: 768px;
+  }
+  .repos {
+    max-width: 768px;
+  }
+}
+@media (max-width: 768px) {
+  .main {
+    max-width: 320px;
+  }
+  .repos {
+    max-width: 320px;
+  }
 }
