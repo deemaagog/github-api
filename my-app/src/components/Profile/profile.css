@@ -1,15 +1,15 @@
 .main {
-	margin: 39px auto;
-	max-width: 1366px;
-	min-width: 320px;
-	width: 100%;
+  margin: 39px auto;
+  max-width: 1366px;
+  min-width: 320px;
+  width: 100%;
 }
 .main-container {
   padding: 0 54px;
-	display: flex;
+  display: flex;
 }
 .user {
-  margin-right: 98px;
+  margin-right: 88px;
 }
 .avatar-container {
   margin-top: 0;
@@ -39,10 +39,20 @@
   color: #0064eb;
 }
 .follow {
+  width: 293px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 25px;
+  margin-top: 30px;
+}
+.followers-container,
+.following-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.followers-container {
+  margin-right: 5px;
 }
 .followers,
 .following {
@@ -52,15 +62,12 @@
   line-height: 150%;
   color: #000000;
 }
-/* .following-icon {
-  margin-left: 19px;
-} */
-.followers {
-	margin-left: 3px;
+.followers-icon {
+  margin-right: 10px;
 }
-/* .following {
-	margin-left: 2px;
-} */
+.following-icon {
+  margin-right: 5px;
+}
 .repos {
   max-width: 877px;
   min-width: 320px;
@@ -73,40 +80,41 @@
   line-height: 130%;
   color: #000000;
   margin-top: -12px;
+  margin-bottom: 30px;
 }
 li {
   background-color: #ffffff;
   margin-bottom: 10px;
 }
 .not-found-section {
-	margin: 0 auto;
-	max-width: 1366px;
-	min-width: 320px;
-	width: 100%;
+  margin: 0 auto;
+  max-width: 1366px;
+  min-width: 320px;
+  width: 100%;
 }
 .not-found-container {
-	max-width: 210px;
-	margin: 210px auto 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  max-width: 210px;
+  margin: 210px auto 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .not-found-icon {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 .not-found-description {
-	font-family: 'Inter';
-	font-weight: 400;
-	font-size: 22px;
-	line-height: 140%;
-	text-align: center;
-	color: #808080;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 140%;
+  text-align: center;
+  color: #808080;
 }
 .repo-section {
-	max-width: 1366px;
-	min-width: 320px;
-	width: 100%;
+  max-width: 1366px;
+  min-width: 320px;
+  width: 100%;
 }
 .repo-container {
   margin-top: 180px;
@@ -119,7 +127,7 @@ li {
   margin-bottom: 35px;
 }
 .repo-not-found-description {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-weight: 400;
   font-size: 22px;
   line-height: 140%;
