@@ -6,7 +6,6 @@ import { PaginationRepo } from "../Pagination/PaginationRepo";
 export const Repos = ({ userName }) => {
   const [error, setError] = useState(null);
   const [repos, setRepos] = useState([]);
-
   const [currentPage, setCurrentPage] = useState(1);
   const [reposPerPage] = useState(4);
 
@@ -43,15 +42,15 @@ export const Repos = ({ userName }) => {
   return (
     <div>
       <ul className="repo-list">
-        {currentRepos.map((repo) => (
-          <>
+        {currentRepos.map((repo, i) => (
+          <div key={i}>
             <li className="repo-item" key={repo.id}>
               <a className="repo-link" href={repo.html_url}>
                 {repo.name}
               </a>
               <span className="repo-description">{repo.description}</span>
             </li>
-          </>
+          </div>
         ))}
       </ul>
       <PaginationRepo

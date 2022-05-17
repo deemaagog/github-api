@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./paginationRepo.css";
 
-export const PaginationRepo = ({ reposPerPage, totalRepos, paginate }) => {
-  const pages = 10;
+export const PaginationRepo = ({ reposPerPage, totalRepos, paginate, pages=10 }) => {
   const pageNumbers = [];
   // Math.ceil(totalRepos / reposPerPage)
   for (let i = 1; i <= pages; i++) {
@@ -38,21 +37,24 @@ export const PaginationRepo = ({ reposPerPage, totalRepos, paginate }) => {
     } else if (currentBtn === dotsInitial) {
       setCurrentBtn(arrOfCurrentBtns[arrOfCurrentBtns.length - 3] + 1);
     }
-
     setArrOfCurrentBtns(tempPageNumbers);
   }, [currentBtn]);
 
   return (
     <div className="pagination-container">
-      <a
-        href="!#"
-        className={`${currentBtn === 1 ? "disabled" : ""}`}
-        onClick={() => setCurrentBtn((prev) => (prev === 1 ? prev : prev - 1))}
-      >
-        &lt;
-      </a>
+      {arrOfCurrentBtns.slice(0, 1).map((number, index) => (
+        <div onClick={() => paginate((number) => (number === 1 ? number : number - 1))}>
+          <a
+            href="!#"
+            className={`${currentBtn === 1 ? "disabled" : ""}`}
+            onClick={() => setCurrentBtn((prev) => (prev === 1 ? prev : prev - 1))}
+          >
+            &lt;
+          </a>
+        </div>
+      ))}
       {arrOfCurrentBtns.map((number, index) => (
-        <div onClick={() => paginate(number)}>
+        <div key={index} onClick={() => paginate(number)}>
           <a
             key={index}
             href="!#"
@@ -63,17 +65,17 @@ export const PaginationRepo = ({ reposPerPage, totalRepos, paginate }) => {
           </a>
         </div>
       ))}
-      <a
-        href="!#"
-        className={`${currentBtn === pageNumbers.length ? "disabled" : ""}`}
-        onClick={() =>
-          setCurrentBtn((prev) =>
-            prev === pageNumbers.length ? prev : prev + 1
-          )
-        }
-      >
-        &gt;
-      </a>
+      {arrOfCurrentBtns.slice(0, 1).map((number, index) => (
+        <div onClick={() => paginate((number) => (number === pageNumbers.length ? number : number + 1))}>
+          <a
+            href="!#"
+            className={`${currentBtn === pageNumbers.length ? "disabled" : ""}`}
+            onClick={() => setCurrentBtn((prev) => prev === pageNumbers.length ? prev : prev + 1)}
+          >
+            &gt;
+          </a>
+        </div>
+      ))}
     </div>
   );
 };

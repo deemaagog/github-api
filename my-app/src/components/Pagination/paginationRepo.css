@@ -17,17 +17,16 @@
 	transition: background-color .2s;
 	cursor: pointer;
 }
-/* .prev,
-.next {
-	width: 7.12px;
-	height: 11.41px;
-} */
 .pagination-container a.active {
 	color: #FFFFFF;
 	background-color: #0064EB;
+	border-radius: 4px;
 }
 .pagination-container a.disabled {
+	width: 7.12px;
+	height: 11.41px;
 	opacity: 0.2;
+	margin: 0 16px;
 }
 .pagination-container a:hover:not(.active) {
 	background-color: rgba(238, 238, 238);
