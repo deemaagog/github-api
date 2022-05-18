@@ -1,0 +1,37 @@
+.repo-list {
+  list-style: none;
+  padding: 0;
+}
+.repo-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+.repo-link {
+  text-decoration: none;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: #0064eb;
+  padding: 25px 0 0 32px;
+  margin-bottom: 15px;
+}
+.repo-description {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+  padding: 0 0 24px 32px;
+}
+
+@media (max-width: 340px) {
+  .repo-link {
+    padding: 5px;
+    margin-bottom: 0;
+  }
+  .repo-description {
+    padding: 5px;
+  }
+}

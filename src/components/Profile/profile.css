@@ -1,0 +1,191 @@
+.main {
+  margin: 39px auto;
+  max-width: 1366px;
+  min-width: 320px;
+  width: 100%;
+}
+.main-container {
+  padding: 0 54px;
+  display: flex;
+}
+.user {
+  margin-right: 88px;
+}
+.avatar-container {
+  margin-top: 0;
+  width: 280.97px;
+  height: 280px;
+  background-color: transparent;
+  margin-bottom: 30px;
+}
+.avatar {
+  width: 100%;
+  border-radius: 500px;
+  object-fit: contain;
+}
+.name {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 130%;
+  color: #000000;
+  margin-bottom: 12px;
+}
+.username {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #0064eb;
+}
+.follow {
+  width: 293px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+.followers-container,
+.following-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.followers-container {
+  margin-right: 5px;
+}
+.followers,
+.following {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #000000;
+}
+.followers-icon {
+  margin-right: 10px;
+}
+.following-icon {
+  margin-right: 5px;
+}
+.repos {
+  max-width: 877px;
+  min-width: 320px;
+  width: 100%;
+}
+.repos-title {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 130%;
+  color: #000000;
+  margin-top: -12px;
+  margin-bottom: 30px;
+}
+li {
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+.not-found-section {
+  margin: 0 auto;
+  max-width: 1366px;
+  min-width: 320px;
+  width: 100%;
+}
+.not-found-container {
+  max-width: 210px;
+  margin: 210px auto 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.not-found-icon {
+  margin-bottom: 10px;
+}
+.not-found-description {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 140%;
+  text-align: center;
+  color: #808080;
+}
+.repo-section {
+  max-width: 1366px;
+  min-width: 320px;
+  width: 100%;
+}
+.repo-container {
+  margin-top: 180px;
+  margin-right: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.repo-not-found-icon {
+  margin-bottom: 35px;
+}
+.repo-not-found-description {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 140%;
+  text-align: center;
+  color: #808080;
+}
+.pagination-container {
+  display: none;
+}
+@media (max-width: 1200px) {
+  .main {
+    max-width: 1200px;
+  }
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .user {
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+  .name {
+    text-align: center;
+  }
+  .username {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .repos-title {
+    text-align: center;
+  }
+  .repo-container {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 910px) {
+  .main {
+    max-width: 768px;
+  }
+  .repos {
+    max-width: 768px;
+  }
+}
+@media (max-width: 768px) {
+  .main {
+    max-width: 320px;
+  }
+  .repos {
+    max-width: 320px;
+  }
+}
+@media (max-width: 340px) {
+  .repos {
+    padding: 0 20px;
+  }
+  .repos-title {
+    display: flex;
+  }
+}
