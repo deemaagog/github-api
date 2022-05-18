@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./paginationRepo.css";
 
-export const PaginationRepo = ({ reposPerPage, totalRepos, paginate, pages=10 }) => {
+export const PaginationRepo = ({
+  reposPerPage,
+  totalRepos,
+  paginate,
+  pages = 10,
+}) => {
   const pageNumbers = [];
   // Math.ceil(totalRepos / reposPerPage)
   for (let i = 1; i <= pages; i++) {
@@ -43,11 +48,18 @@ export const PaginationRepo = ({ reposPerPage, totalRepos, paginate, pages=10 })
   return (
     <div className="pagination-container">
       {arrOfCurrentBtns.slice(0, 1).map((number, index) => (
-        <div onClick={() => paginate((number) => (number === 1 ? number : number - 1))}>
+        <div
+          key={index}
+          onClick={() =>
+            paginate((number) => (number === 1 ? number : number - 1))
+          }
+        >
           <a
             href="!#"
             className={`${currentBtn === 1 ? "disabled" : ""}`}
-            onClick={() => setCurrentBtn((prev) => (prev === 1 ? prev : prev - 1))}
+            onClick={() =>
+              setCurrentBtn((prev) => (prev === 1 ? prev : prev - 1))
+            }
           >
             &lt;
           </a>
@@ -66,11 +78,22 @@ export const PaginationRepo = ({ reposPerPage, totalRepos, paginate, pages=10 })
         </div>
       ))}
       {arrOfCurrentBtns.slice(0, 1).map((number, index) => (
-        <div onClick={() => paginate((number) => (number === pageNumbers.length ? number : number + 1))}>
+        <div
+          key={index}
+          onClick={() =>
+            paginate((number) =>
+              number === pageNumbers.length ? number : number + 1
+            )
+          }
+        >
           <a
             href="!#"
             className={`${currentBtn === pageNumbers.length ? "disabled" : ""}`}
-            onClick={() => setCurrentBtn((prev) => prev === pageNumbers.length ? prev : prev + 1)}
+            onClick={() =>
+              setCurrentBtn((prev) =>
+                prev === pageNumbers.length ? prev : prev + 1
+              )
+            }
           >
             &gt;
           </a>

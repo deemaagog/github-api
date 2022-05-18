@@ -40,7 +40,7 @@ export const Repos = ({ userName }) => {
   };
 
   return (
-    <div>
+    <>
       <ul className="repo-list">
         {currentRepos.map((repo, i) => (
           <div key={i}>
@@ -53,11 +53,15 @@ export const Repos = ({ userName }) => {
           </div>
         ))}
       </ul>
-      <PaginationRepo
-        reposPerPage={reposPerPage}
-        totalRepos={repos.length}
-        paginate={paginate}
-      />
-    </div>
+      {repos.length ? (
+        <PaginationRepo
+          reposPerPage={reposPerPage}
+          totalRepos={repos.length}
+          paginate={paginate}
+        />
+      ) : (
+        ""
+      )}
+    </>
   );
 };

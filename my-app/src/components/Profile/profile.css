@@ -134,7 +134,9 @@ li {
   text-align: center;
   color: #808080;
 }
-
+.pagination-container {
+  display: none;
+}
 @media (max-width: 1200px) {
   .main {
     max-width: 1200px;
@@ -146,7 +148,7 @@ li {
   }
   .user {
     margin-right: 0;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
   }
   .name {
     text-align: center;
@@ -158,6 +160,9 @@ li {
   }
   .repos-title {
     text-align: center;
+  }
+  .repo-container {
+    margin-top: 40px;
   }
 }
 @media (max-width: 910px) {
@@ -174,5 +179,13 @@ li {
   }
   .repos {
     max-width: 320px;
+  }
+}
+@media (max-width: 340px) {
+  .repos {
+    padding: 0 20px;
+  }
+  .repos-title {
+    display: flex;
   }
 }

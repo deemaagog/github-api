@@ -23,5 +23,15 @@
   font-size: 16px;
   line-height: 19px;
   color: #000000;
-  padding: 0 200px 24px 32px;
+  padding: 0 0 24px 32px;
+}
+
+@media (max-width: 340px) {
+  .repo-link {
+    padding: 5px;
+    margin-bottom: 0;
+  }
+  .repo-description {
+    padding: 5px;
+  }
 }
