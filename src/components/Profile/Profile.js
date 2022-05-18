@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
-import axios from "axios";
+import React from "react";
 import {
   iconUserNotFound,
   iconFollowers,
@@ -9,34 +8,11 @@ import {
 import "./profile.css";
 import { Repos } from "../Repos/Repos";
 import { CircularProgress } from "@mui/material";
+import useFetch from "../../hooks/useFetch";
 
 export const Profile = ({ userName }) => {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [userData, setUserData] = useState({});
 
-  const fetchUser = useCallback(async () => {
-    setLoading(true);
-    try {
-      const userResponse = await axios(
-        `https://api.github.com/users/${userName}`
-      );
-      setUserData(userResponse.data);
-      setError(null);
-    } catch (err) {
-      setError(err);
-    } finally {
-      window.setTimeout(() => {
-        setLoading(false);
-      }, 1000);
-    }
-  }, [userName]);
-
-  useEffect(() => {
-    if (userName) {
-      fetchUser();
-    }
-  }, [userName, fetchUser]);
+  const { error, loading, data } = useFetch(userName);
 
   if (error) {
     return (
@@ -74,9 +50,8 @@ export const Profile = ({ userName }) => {
     followers,
     following,
     public_repos: reposTotal,
-    // description,
     avatar_url: avatarUrl,
-  } = userData;
+  } = data || {};
 
   return (
     <main className="main">
@@ -134,7 +109,7 @@ export const Profile = ({ userName }) => {
                 </div>
               )}
             </div>
-            <Repos userName={userName} />
+            <Repos userName={userName} reposTotal={reposTotal} />
           </div>
         </div>
       )}
